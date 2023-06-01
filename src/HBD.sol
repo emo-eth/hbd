@@ -17,6 +17,11 @@ contract HBD is ERC721, IERC5192, Ownable {
     string public buttURI;
     mapping(uint256 tokenId => string overrideURI) uriOverrides;
 
+    constructor(string memory _baseURI, string memory _buttURI) {
+        baseURI = _baseURI;
+        buttURI = _buttURI;
+    }
+
     function name() public pure override returns (string memory) {
         return "HBD";
     }
